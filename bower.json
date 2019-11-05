@@ -1,0 +1,15 @@
+{
+  "name": "starter-node-angular",
+  "version": "1.0.0",
+  "directory": "frontend/public/lib",
+  "dependencies": {
+    "bootstrap": "latest",
+    "animate.css": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-bootstrap": "latest",
+    "angular-touch": "latest",
+    "angular-animate": "latest",
+    "angular-ui-notification": "^0.3.6"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "vfosE1",
+  "version": "1.0.0",
+  "description": "Generates a configuration in a JSON format",
+  "scripts": {
+    "start": "node backend/server.js",
+    "test": "mocha --reporter mochawesome"
+  },
+  "author": "David Aleixo @KBZ",
+  "license": "ISC",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "*",
+    "bootstrap": "latest",
+    "copy-webpack-plugin": "^4.0.1",
+    "express": "*",
+    "file-loader": "^1.1.11",
+    "font-awesome": "latest",
+    "method-override": "*",
+    "mongoose": "*",
+    "path": "^0.12.7",
+    "webpack": "^2.6.1",
+    "webpack-cli": "^2.1.3",
+    "winston": "^2.3.1"
+  },
+  "repository": { 
+    "type" : "git",
+    "url" : "https://opensourceprojects.eu/git/p/vfos/assets/enablers/cen/code"
+  }
+}

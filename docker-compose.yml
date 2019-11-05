@@ -1,0 +1,23 @@
+version: "3"
+services:
+  enabler:
+    container_name: configurationenabler
+    restart: always
+    build: .
+    ports:
+      - "3000:3000" #port forwarding
+    links:
+      - mongo
+    depends_on:
+      - mongo # make sure mongo starts before the enabler
+    volumes:
+      - .:/usr/src/ce # map local directory to docker container dir
+      - /usr/src/ce/node_modules
+      - /usr/src/ce/frontend/public/libs
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"

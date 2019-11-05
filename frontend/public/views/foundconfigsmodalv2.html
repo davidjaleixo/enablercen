@@ -1,0 +1,52 @@
+<div class="modal-header">
+    <h4 class="modal-title">Configurations</h4>
+</div>
+<div class="modal-body">
+
+<div class="card">
+  <div class="card-header">We have found configurations related to your enabler<p>Select your option</p></div>
+  <div class="card-body">
+    <!-- OLD CONFIGURATIONS TABLE -->
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Version</th>
+            <!--th>Parent version</th-->
+            <th>Created at</th>
+            <th>Name</th>
+            <th>Comment</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr ng-repeat="config in oldconfigs">
+            <td>{{config.version}}</td>
+            <!--td>{{config.parent}}</td-->
+            <td>{{config.created_at | date:"dd/MM/yyyy HH:mm"}}</td>
+            <td>{{config.configname}}</td>
+            <td>{{config.comment}}</td>
+            <td>
+                <div class="btn-group" role="group">
+                  <button class="btn btn-outline-primary" type="button" ng-click="viewconfig(config)">
+                    <span class="fa fa-search" aria-hidden="true"></span>
+                  </button>
+                  <button class="btn btn-outline-primary" type="button" ng-click="makeparent(config.version)">
+                    <span class="fa fa-share" aria-hidden="true"></span>
+                  </button>
+              </div>
+
+                
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
+
+
+</div>
+<div class="modal-footer">
+<div align="left">If you close the popup, a new configuration will be created</div>
+    <div align="right"><button type="button" class="btn btn-success" ng-click="ok()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create New</button></div>
+</div>

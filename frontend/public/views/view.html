@@ -1,0 +1,76 @@
+<div class="modal-header">
+    <h4 class="modal-title">View configuration {{config.version}}</h4>
+</div>
+<div class="modal-body">
+	<!-- DEFAULT PARAMETERS -->
+
+<div class="card">
+  <div class="card-header">Default Parameters</div>
+  <div class="card-body">
+    
+<div class="input-group mb-3">
+	  
+
+    <div class="input-group mb-3">
+    	<div class="input-group-prepend">
+    		<span class="input-group-text" id="configVersion">Version</span>
+    	</div>
+	  	<input type="text" required class="form-control" disabled placeholder="{{config.version}}" aria-describedby="basic-addon1" ng-model='config.version'>
+	</div>
+	<div class="input-group mb-3">
+	  <div class="input-group-prepend">
+	  	<span class="input-group-text" id="configEnabler">Enabler ID</span>
+	  </div>
+	  <input type="text" required class="form-control" disabled placeholder="Enabler ID" aria-describedby="basic-addon1" ng-model='config.enablerid'>
+	</div>
+	<div class="input-group mb-3">
+	  <div class="input-group-prepend">
+	  <span class="input-group-text" id="configComment">Comment</span>
+	  </div>
+	  <input type="text" required class="form-control" disabled placeholder="Add a comment related to the meaning of the configuration" aria-describedby="basic-addon1" ng-model='config.comment'>
+	</div>
+	<div class="input-group mb-3">
+	  <div class="input-group-prepend">
+	  <span class="input-group-text" id="configPath">Path</span>
+	  </div>
+	  <input type="text" required class="form-control" disabled placeholder="Add your path" aria-describedby="basic-addon1" ng-model='config.path'>
+	</div>
+	<div class="input-group mb-3">
+	  <div class="input-group-prepend">
+	  <span class="input-group-text" id="configName">Name</span>
+	  </div>
+	  <input type="text" required class="form-control" disabled placeholder="Add the configuration name" aria-describedby="basic-addon1" ng-model='config.configname'>
+	</div>
+
+  </div>
+</div>
+
+<!-- CUSTOM PARAMETERS -->
+
+<div class="card">
+  <div class="card-header">Custom Parameters</div>
+  
+  <div class="card-body">
+    <div><!-- DYNAMIC PARAMETERS -->
+		<div ng-repeat="parameter in config.body">
+				
+			
+			<div class="input-group mb-3" role="group" ng-repeat="(key, value) in parameter">
+				<div class="input-group-prepend">
+			  		<span class="input-group-text" id="_key" ng-model="key">{{key}}</span>
+			  	</div>
+			  <input type="text" disabled required class="form-control" placeholder="{{config.body[key]}}" ng-model='value' aria-describedby="basic-addon1">
+			  
+			</div>
+		</div>
+	</div>
+	<p></p>
+  </div>
+</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="close()"><span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"></span> Close</button>
+</div>
+</div>
+
+

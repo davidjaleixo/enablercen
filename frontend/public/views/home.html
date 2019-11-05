@@ -1,0 +1,43 @@
+<!-- public/views/home.html -->
+
+<div class="jumbotron text-center">
+    <h1>Welcome to the Configuration Enabler</h1>
+
+</div>
+<div class="card">
+	<div class="card-header">
+		We are currently storing the following enablers' configurations
+	</div>
+  <div class="card-body">
+    
+    <table class="table">
+    	<thead>
+    		<tr>
+    			<th>Enabler id</th>
+    			<th>Total versions</th>
+    			<th>Actions</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr ng-repeat="enabler in enablers">
+    			<td>{{enabler.id}}</td>
+    			<td>{{enabler.versions}}</td>
+    			<td>
+    				<div class="btn-group" role="group">
+    					<button class="btn btn-outline-secondary" type="button" ng-click="manage(enabler.id)">
+    						<span class="fa fa-wrench"></span> Manage
+    					</button>
+    					<button class="btn btn-outline-secondary" type="button" ng-click="config(enabler.id)">
+    						<span class="fa fa-plus"></span> Create New
+    					</button>
+    				</div>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+  </div>
+  <div class="card-footer">
+  	Cannot find your enabler id? Create your first configuration 
+  	<button class="btn btn-outline-secondary" type="button" ng-click="new()">here</button>
+  </div>
+</div>

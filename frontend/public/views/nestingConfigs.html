@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <h4 class="modal-title">Choose configuration to nest</h4>
+</div>
+<div class="modal-body">
+
+  <!-- OLD CONFIGURATIONS TABLE -->
+  <table class="table">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <!--th>Parent version</th-->
+          <th>Created at</th>
+          <th>Name</th>
+          <th>Comment</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ctrldata}}
+        <tr ng-repeat="config in configs">
+          <td>{{config.version}}</td>
+          <!--td>{{config.parent}}</td-->
+          <td>{{config.created_at | date:"dd/MM/yyyy HH:mm"}}</td>
+          <td>{{config.configname}}</td>
+          <td>{{config.comment}}</td>
+          <td>
+
+            <div class="btn-group" role="group">
+                <button class="btn btn-outline-primary" type="button" ng-click="viewconfig(config)">
+                  <span class="fa fa-search" aria-hidden="true"></span>
+                </button>
+                <button ng-if="config.nested == true" class="btn btn-outline-primary" type="button" ng-click="delNest(config.version)">
+                  <span class="fa fa-check-circle" aria-hidden="true"></span>
+                </button>
+                <button ng-if="config.nested == false" class="btn btn-outline-primary" type="button" ng-click="addNest(config.version)">
+                  <span class="fa fa-repeat" aria-hidden="true"></span>
+                </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+</div>
+<div class="modal-footer">
+<div align="left"></div>
+    <div align="right"><button type="button" class="btn btn-primary" ng-click="save()"> Save</button></div>
+</div>

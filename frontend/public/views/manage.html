@@ -1,0 +1,51 @@
+<div class="card">
+  <div class="card-header">Configurations related to enabler {{enablerid}}</div>
+  <div class="card-body">
+    
+  	<table class="table">
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Parent version</th>
+            <th>Created at</th>
+            <!--th>Status</th-->
+            <th>Comment</th>
+            <th>Parameters</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr ng-repeat="config in configs">
+            <td>{{config.version}}</td>
+            <td>{{config.parent}}</td>
+            <td>{{config.created_at | date:"dd/MM/yyyy HH:mm"}}</td>
+            <!--td align="center">
+                <div ng-if="config.active">
+                    <span class="label label-default">
+                        <span class="fa fa-ok" aria-hidden="true"></span> Active
+                    </span>
+                </div>
+            </td-->
+            <td>{{config.comment}}</td>
+            <td>{{config.body.length}}</td>
+            <td>
+            <div class="btn-group" role="group">
+              <button type="button" data-backdrop="false" class="btn btn-outline-secondary" ng-click="view(config.version)"><span class="fa fa-search" aria-hidden="true"></span> View
+              </button>
+              <!-- dropdown -->
+
+
+              <button type="button" data-backdrop="false" class="btn btn-outline-secondary" ng-click="exportJSON(config.version)"><span class="fa fa-download" target="_blank" aria-hidden="true"></span> JSON
+              </button>
+              <button type="button" data-backdrop="false" class="btn btn-outline-secondary" ng-click="exportXML(config.version)"><span class="fa fa-download" aria-hidden="true"></span> XML
+              </button>
+              <button type="button" data-backdrop="false" class="btn btn-outline-secondary" ng-click="exportPROPS(config.version)"><span class="fa fa-download" aria-hidden="true"></span> Java Properties
+              </button>
+            </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>

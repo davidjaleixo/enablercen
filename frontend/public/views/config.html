@@ -1,0 +1,80 @@
+<!-- public/views/config.html -->
+
+<!-- CONFIGURATOR FORM -->
+
+<form ng-submit="createConfig(config.mode)">
+
+<!-- DEFAULT PARAMETERS -->
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Default Parameters
+  <div class="pull-right">{{config.mode}}</div></div>
+  <div class="panel-body">
+    
+    <div class="input-group">
+	  <span class="input-group-addon" id="configVersion">Version</span>
+	  <input type="text" required class="form-control" disabled placeholder="{{config.version}}" aria-describedby="basic-addon1" ng-model='config.version'>
+	</div>
+	<div class="input-group">
+	  <span class="input-group-addon" id="configEnabler">Enabler ID</span>
+	  <input type="text" required class="form-control" disabled placeholder="Enabler ID" aria-describedby="basic-addon1" ng-model='config.enablerid'>
+	</div>
+	<div class="input-group">
+	  <span class="input-group-addon" id="configComment">Comment</span>
+	  <input type="text" required class="form-control" placeholder="Add a comment related to the meaning of the configuration" aria-describedby="basic-addon1" ng-model='config.comment'>
+	</div>
+	<div class="input-group">
+	  <span class="input-group-addon" id="configPath">Path</span>
+	  <input type="text" required class="form-control" placeholder="Add your path" aria-describedby="basic-addon1" ng-model='config.path'>
+	</div>
+	<div class="input-group">
+	  <span class="input-group-addon" id="configName">Name</span>
+	  <input type="text" required class="form-control" placeholder="Add the configuration name" aria-describedby="basic-addon1" ng-model='config.configname'>
+	</div>
+  </div>
+</div>
+
+<!-- CUSTOM PARAMETERS -->
+
+	<div class="panel panel-info">
+	  <div class="panel-heading">Custom Parameters
+	  <div class="pull-right"><button class="btn btn-xs btn-success" type="button" ng-click="addNewParameter()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button></div>
+	  </div>
+	  
+	  <div class="panel-body">
+	    <div><!-- DYNAMIC PARAMETERS -->
+			<div class="input-group" role="group" ng-repeat="parameter in config.body">
+			  <span class="input-group-btn">
+			  	<button class="btn btn-warning" type="button" ng-click="editParameter(parameter.id, parameter.key)" data-toggle="tooltip" data-placement="bottom" title="Edit the parameter key"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+			  </span>
+			  <span class="input-group-btn">
+			  	<button class="btn btn-danger" type="button" ng-click="delParameter($index)" data-toggle="tooltip" data-placement="bottom" title="Delete the parameter key"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+			  	</button>
+			  </span>
+			  <span class="input-group-addon" id="_parameter.id">{{parameter.key}}</span>
+			  <input type="text" required class="form-control" placeholder="{{parameter.value}}" ng-model='parameter.value' aria-describedby="basic-addon1">
+			</div>
+		</div>
+		<p></p>
+
+
+
+	    <div align='center'> 
+	    	<button class="btn btn-success" type="button" ng-click="addNewParameter()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</button>
+	    </div>
+	  </div>
+	</div>
+	<div align="center">
+	<button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Create</button>
+	</div>
+
+</form>
+
+
+
+
+
+
+
+
+

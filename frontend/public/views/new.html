@@ -1,0 +1,17 @@
+<form ng-submit="save()">
+<div class="modal-header">
+    <h4 class="modal-title">New configuration</h4>
+</div>
+<div class="modal-body">
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="addconfig">Insert your Enabler ID</span>
+    </div>
+    <input type="text" class="form-control" required aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="EnablerID" pattern="^\S+$" ng-model='enablerid'>
+  </div>
+</div>
+<div class="modal-footer">
+  <div align="right"><button type="submit" class="btn btn-outline-secondary"><span class="fa fa-save" aria-hidden="true"></span> Create configuration</button></div>
+</div>
+</form>
