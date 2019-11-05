@@ -9,6 +9,12 @@ FROM node:6
 LABEL description="Configuration Enabler" 
 LABEL maintainer="david.aleixo@knowledgebiz.pt"
 
+LABEL vf-OS=true
+LABEL vf-OS.icon=img/2.png
+LABEL vf-OS.urlprefixReplace=true
+LABEL vf-OS.frontendUri="/configurationenabler"
+LABEL vf-OS.name=configurationenabler
+
 # configuration enabler directory
 RUN mkdir -p /usr/src/ce
 # this lets the working directory for every COPY RUN and CMD command
